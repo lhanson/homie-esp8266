@@ -3,11 +3,17 @@
 Homie for ESP8266
 =================
 
-[![Build Status](https://img.shields.io/circleci/project/github/homieiot/homie-esp8266/develop.svg?style=flat-square)](https://circleci.com/gh/homieiot/homie-esp8266) [![Latest Release](https://img.shields.io/badge/release-v2.0.0-yellow.svg?style=flat-square)](https://github.com/homieiot/homie-esp8266/releases) [![Gitter](https://img.shields.io/gitter/room/Homie/ESP8266.svg?style=flat-square)](https://gitter.im/homie-iot/ESP8266)
+[![Build Status](https://img.shields.io/circleci/project/github/homieiot/homie-esp8266/develop.svg?style=flat-square)](https://circleci.com/gh/homieiot/homie-esp8266) [![Latest Release](https://img.shields.io/badge/release-v2.0.0-yellow.svg?style=flat-square)](https://github.com/homieiot/homie-esp8266/releases) [![Gitter](https://img.shields.io/gitter/room/Homie/ESP8266.svg?style=flat-square)](https://gitter.im/homie-iot/ESP8266) [![PlatformIO](https://img.shields.io/badge/Powered-PlatformIO-blue.png)](https://platformio.org/lib/show/555/Homie)
 
 An Arduino for ESP8266 implementation of [Homie](https://github.com/homieiot/convention), an MQTT convention for the IoT.
 
 Currently Homie for ESP8266 implements [Homie 2.0.1](https://github.com/homieiot/convention/releases/tag/v2.0.1)
+
+## Note about v3 features (Auto-discovery, ESP32, ...)
+
+Version v3 is currently in development. It adds support for Homie-convention v3.0.1 and ESP32 controllers.
+
+If you are interested in testing or helping development, please try the [#develop-v3 branch](https://github.com/homieiot/homie-esp8266/tree/develop-v3).
 
 ## Note for v1.x users
 
@@ -43,7 +49,10 @@ Add the `PIO_FRAMEWORK_ARDUINO_LWIP2_LOW_MEMORY` build flag to ensure reliable O
 
 4. Update dev/platform to staging version:
    - [Instruction for Espressif 8266](http://docs.platformio.org/en/latest/platforms/espressif8266.html#using-arduino-framework-with-staging-version)
-5. Add development version of "Homie" to project using `platformio.ini` and [lib_deps](http://docs.platformio.org/page/projectconf/section_env_library.html#lib-deps) option:
+
+5. Before editing platformio.ini as shown below, you must install "git" if you don't already have it. For Windows, just go to http://git-scm.com/download/win and the download will start automatically. Note, this is only a requirement for the development versions.
+
+6. Add development version of "Homie" to project using `platformio.ini` and [lib_deps](http://docs.platformio.org/page/projectconf/section_env_library.html#lib-deps) option:
 ```ini
 [env:myboard]
 platform = ...
